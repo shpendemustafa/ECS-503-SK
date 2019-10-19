@@ -14,9 +14,9 @@ namespace SK.StudentTranscript
             List<int> grades = new List<int>();
             List<int> credits = new List<int>();
             
-            courses.Add("test");
-            grades.Add(10);
-            credits.Add(10);
+//            courses.Add("test");
+//            grades.Add(10);
+//            credits.Add(10);
             
             while (true)
             {
@@ -52,12 +52,8 @@ namespace SK.StudentTranscript
 
                     switch (mGrade.ToLower())
                     {
-                        case "in":
-                            mGrade = "3";
-                            break;
-                        case "nr":
-                            mGrade = "4";
-                            break;
+                        case "in": mGrade = "3"; break;
+                        case "nr": mGrade = "4"; break;
                     }
 
                     if (int.TryParse(mGrade, out var grade) && (grade >= 3 && grade <= 10))
@@ -68,7 +64,7 @@ namespace SK.StudentTranscript
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Ju lutemi jepeni nje vlere prej 5-10!");
+                        Console.WriteLine("Ju lutemi jepeni nje vlere prej 5-10, IN ose NR!");
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                 }
@@ -104,12 +100,9 @@ namespace SK.StudentTranscript
         {
             switch (grade)
             {
-                case 3:
-                    return "IN";
-                case 4:
-                    return "NR";
-                default:
-                    return grade.ToString();
+                case 3: return "IN";
+                case 4: return "NR";
+                default: return grade.ToString();
             }
         }
     }
